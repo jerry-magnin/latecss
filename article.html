@@ -1,0 +1,102 @@
+<style>
+body {
+    font-family: serif;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+
+    counter-reset: h2;
+    text-align: justify;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 2pt;
+    font-size: 30pt;
+}
+.author {
+    text-align: center;
+    font-size: 16pt;
+}
+h2:not(.nonumber) {
+    counter-reset: h3;
+    &:before {
+        counter-increment: h2;
+        content: counter(h2) ". ";
+    }
+}
+h3:not(.nonumber) {
+    counter-reset: h4;
+    &:before {
+        counter-increment: h3;
+        content: counter(h2) "." counter(h3) ". ";
+    }
+}
+
+ul {
+    list-style-type: none;
+}
+li:before {
+    content: "— ";
+}
+
+.menucontainer {
+    display: flex;
+    justify-content: space-around;
+    /*background-color: dimgrey;*/
+}
+.menuelement {
+    padding: 5px 10px 5px 10px; /* TLBR */
+}
+.menuelement:hover {
+    background-color: darkslategray;
+}
+
+.bibliography {
+    li:before {
+        content: "";
+    }
+    a {
+        font-style: italic;
+    }
+}
+
+</style>
+
+<body>
+<nav class="menucontainer">
+    <div class="menuelement">À propos</div>
+    <div class="menuelement">Archives</div>
+    <div class="menuelement">Outils</div>
+    <div class="menuelement">Sites intéressants</div>
+    <div class="menuelement">Liens partagés</div>
+</nav>
+<main>
+    <h1>Titre de l’article</h1>
+    <div class="author">Jerry Magnin<br>2025-06-26</div>
+    <p>Ceci est un exemple de paragraphe.</p>
+    <h2>Le projet</h2>
+
+    <p>Je cherche à allumer une lampe à l’extérieur de chez moi, sur détection de présence mais seulement si la luminosité est suffisament basse. Pourquoi le faire moi-même plutôt que d’acheter une solution toute faite dans le commerce ? Eh bien c’est ce que j’ai fait jusqu’à présent, mais ces produits n’étaient pas satisfaisants. Tous ceux que j’ai pu tester ont fini par lacher après une saison en extérieur…
+    Puisque je ne trouve pas mon bonheur sur un étalage, je vais assembler moi-même ce dont j’ai besoin !
+    Maintenant, pourquoi utiliser un ESP32 avec ESP-IDF ? <a href="example.com">Exemple</a>
+    </p>
+    <h3>Some reasoning</h3>
+    <ul>
+        <li>J’ai des boards ESP32-WROOM-32 en nombre.</li>
+	    <li>Je suis dans ma phase de découverte du framework ESP-IDF.</li>
+	    <li>Concernant ce framework, ça me permettra d’utiliser des modules que je n’ai pas encore abordés :</li>
+        <ul>
+		    <li>mise en sommeil ;</li>
+            <li>interruption;</li>
+            <li>GPIOs.</li>
+        </ul>
+    </ul>
+
+    <h2 class="nonumber">Bibliographie</h2>
+    <div class="bibliography">
+        <ul>
+            <li>Magnin, J. 2025-01-22. <a href="https://www.jmagnin.fr/24CSM01-IDF-and-Arduino.html" class="bibtitle">Lecture de données depuis l’EEPROM 24CSM01</a></li>
+        </ul>
+    </div>
+</main>
+</body>
