@@ -1,0 +1,87 @@
+body {
+    font-family: serif;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    counter-reset: h2 figcaption;
+    text-align: justify;
+}
+header {
+    p {
+        text-align: center;
+    }
+}
+h1 {
+    text-align: center;
+    margin-bottom: 2pt;
+    font-size: 30pt;
+}
+.author {
+    text-align: center;
+    font-size: 16pt;
+}
+h2:not(.nonumber) {
+    counter-reset: h3;
+    &::before {
+        counter-increment: h2;
+        content: counter(h2) ". ";
+    }
+}
+h3:not(.nonumber) {
+    counter-reset: h4;
+    &::before {
+        counter-increment: h3;
+        content: counter(h2) "." counter(h3) ". ";
+    }
+}
+ul {
+    list-style-type: none;
+}
+li:before {
+    content: "— ";
+}
+
+.menucontainer {
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    /*background-color: dimgrey;*/
+}
+.menuelement {
+    padding: 5px 10px 5px 10px; /* TLBR */
+}
+.menuelement:hover {
+    background-color: darkslategray;
+}
+
+.bibliography {
+    li:before {
+        content: "";
+    }
+    a {
+        font-style: italic;
+    }
+}
+
+figure {
+    text-align: center;
+    max-width: 80%;
+}
+figcaption {
+    font-style: italic;
+}
+figcaption:before {
+    counter-increment: figcaption;
+    content: "Figure " counter(figcaption) ". ";
+}
+img {
+    max-width: 80%;
+}
+
+@media (max-width: 800px) {
+    body {
+        max-width: 100%;
+        width: 100%;
+    }
+}

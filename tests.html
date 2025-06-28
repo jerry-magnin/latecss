@@ -1,68 +1,14 @@
+<link rel="stylesheet" href="static/css/latecss-light.css">
+
 <style>
-body {
-    font-family: serif;
-    max-width: 760px;
-    margin-left: auto;
-    margin-right: auto;
-
-    counter-reset: h2;
-    text-align: justify;
-}
-h1 {
-    text-align: center;
-    margin-bottom: 2pt;
-    font-size: 30pt;
-}
-.author {
-    text-align: center;
-    font-size: 16pt;
-}
-h2:not(.nonumber) {
-    counter-reset: h3;
-    &:before {
-        counter-increment: h2;
-        content: counter(h2) ". ";
-    }
-}
-h3:not(.nonumber) {
-    counter-reset: h4;
-    &:before {
-        counter-increment: h3;
-        content: counter(h2) "." counter(h3) ". ";
-    }
-}
-
-ul {
-    list-style-type: none;
-}
-li:before {
-    content: "— ";
-}
-
-.menucontainer {
-    display: flex;
-    justify-content: space-around;
-    /*background-color: dimgrey;*/
-}
-.menuelement {
-    padding: 5px 10px 5px 10px; /* TLBR */
-}
-.menuelement:hover {
-    background-color: darkslategray;
-}
-
-.bibliography {
-    li:before {
-        content: "";
-    }
-    a {
-        font-style: italic;
-    }
-}
-
+    
 </style>
 
 <body>
+    <header>
+        <h1>Jerry Magnin</h1>
+        <p>👋 Hi, I'm Jerry — Ingénieur des milieux de montagne de formation ; géologue / géomorphologue spécialisé en risques rocheux de métier ; électronicien et développeur autodidacte.</p>
+    </header>
 <nav class="menucontainer">
     <div class="menuelement">À propos</div>
     <div class="menuelement">Archives</div>
@@ -70,7 +16,17 @@ li:before {
     <div class="menuelement">Sites intéressants</div>
     <div class="menuelement">Liens partagés</div>
 </nav>
+
 <main>
+    <h2 class="nonumber">Derniers posts</h2>
+    <article>
+        <h3 class="nonumber"><a href="single.html">{{ article.title }}</a></h3>
+        <p>{{ article.summary }}</p>
+    </article>
+    <article>
+        <h3 class="nonumber"><a href="single.html">{{ article.title }}</a></h3>
+        <p>{{ article.summary }}</p>
+    </article>
     <h1>Titre de l’article</h1>
     <div class="author">Jerry Magnin<br>2025-06-26</div>
     <p>Ceci est un exemple de paragraphe.</p>
@@ -91,6 +47,12 @@ li:before {
             <li>GPIOs.</li>
         </ul>
     </ul>
+
+    <figure>
+        <img src="image1.png"/>
+        <figcaption>Pillars of Creation, as photographied by James Webb Telescope</figcaption>
+        CC-By NASA
+    </figure>
 
     <h2 class="nonumber">Bibliographie</h2>
     <div class="bibliography">

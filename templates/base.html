@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/latecss-light.css">
+  <title>{{ SITETITLE }}</title>
+</head>
+<body>
+  <header>
+    <h1>{{ SITETITLE }}</h1>
+    <p>{{ SITESUBTITLE }}</p>
+  </header>
+  <nav class="menucontainer">
+    <div class="menuelement">À propos</div>
+    <div class="menuelement">Archives</div>
+    <div class="menuelement">Outils</div>
+    <div class="menuelement">Sites intéressants</div>
+    <div class="menuelement">Liens partagés</div>
+  </nav>
+  <main>
+  {% block content %}
+  {% endblock %}
+  </main>
+
+</body>
+</html> 
